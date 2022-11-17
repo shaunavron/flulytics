@@ -1,0 +1,57 @@
+<PackageName>
+Include the title exactly as found on DESCRIPTION file here.
+
+Description:
+A paragraph that describes the purpose of your Rpackage. Explain how your package add to or
+improve a current work flow in bioinformatics or computational biology (i.e., how is it unique?,
+what issue does it address?). Finally, include the Rversion (not RStudio version) and platform
+(Mac, Windows, Linux (Debian, Fedora/Redhat, Ubuntu)), used to develop the package. There
+should be no Shiny implementation at this point.
+– Installation:
+Provide the following text and commands, customized to your Rpackage.
+To install the latest version of the package:
+require("devtools")
+devtools::install_github("<GitHubUserName>/<PackageName>", build_vignettes = TRUE)
+library("<PackageName>")
+To run the shinyApp: Under construction
+– Overview:
+Provide the following commands, customized to your Rpackage. Then provide an overview
+to briefly describe the main components of the package. Include one image illustrating the
+overview of the package, that shows the inputs and outputs. Ensure the image is deposited
+in the correct location, as discussed in class. Point the user to vignettes for a tutorial of your
+package.
+ls("package:<PackageName>")
+data(package = "<PackageName>") # optional
+browseVignettes("<PackageName>")
+– Contributions:
+Provide a paragraph clearly indicating the name of the author of the package, contributions
+from the author and contributions from other packages/sources for each function. Remember
+your individual contributions to the package are important.
+– References:
+Provide full references for all sources used, including for the packages mentioned under ’Con-
+tributions’, in one specific format.
+– Acknowledgements:
+Provide the following text, customized to your Rpackage.
+This package was developed as part of an assessment for 2022 BCB410H: Applied Bioinformat-
+ics course at the University of Toronto, Toronto, CANADA. <PackageName> welcomes issues,
+enhancement requests, and other contributions. To submit an issue, use the GitHub issues.
+– Other Topics:
+Any other content of your preference must come after ‘Acknowledgements’ section, with mean-
+ingful headings of your choice.
+• Additionally, need following completed files and directories, as discussed in class:
+– Ensure the .Rproj file is available on GitHub. Do NOT add it to .gitignore
+– DESCRIPTION
+– NAMESPACE
+– LICENSE
+– man subdirectory
+– R subdirectory
+* Evidence of functions to perform biological data analysis.
+* Evidence of function(s) with some graphical output.
+* References with full citations.
+* Help documentation for exported functions with working examples using own data or data
+from another package.
+– vignettes subdirectory
+* Evidence of a tutorial via a vignette.
+– tests subdirectory
+* Evidence of tests.
+– (data subdirectory is optional. Should be provided if you are making your own data available.)
