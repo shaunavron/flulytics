@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Flulytics
@@ -173,3 +172,7 @@ citation("Flulytics")
 `Flulytics` welcomes issues, enhancement requests, and other
 contributions. To submit an issue, use the [GitHub
 issues](https://github.com/shaunamia/flulytics/issues).
+=======
+# flulytics
+Flulytics is an R package that allows you to load and visualize data of reported influenza cases, and influenza immunizations in Canada. This package contains functions that allows you to view the raw data, generate customizable bar plots, and search ncbi databases for the id's of records for each influenza strain in the data.
+>>>>>>> bf2b56ced938f38d3a1f2865de17e945244d497d
