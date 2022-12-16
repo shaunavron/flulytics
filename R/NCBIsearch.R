@@ -14,8 +14,6 @@
 #' @examples
 #' ncbi_search("AH1", "assembly")
 
-library(rentrez)
-
 ncbi_search <- function(search_term, db, related=TRUE){
   if(!(is.character(db))){
     stop("Database must be a string")
@@ -23,12 +21,12 @@ ncbi_search <- function(search_term, db, related=TRUE){
   if(!(is.character(search_term))){
     stop("Search term must be a string")
   }
-  if(db %in% entrez_dbs()){
-    curr_search <- entrez_search(db=db, term=search_term)
+  if(db %in% rentrez::entrez_dbs()){
+    curr_search <- rentrez::entrez_search(db=db, term=search_term)
     print(curr_search)
     print(curr_search$ids)
     if(length(curr_search) > 0){
-      link_search <- entrez_link(dbfrom=db,
+      link_search <- rentrez::entrez_link(dbfrom=db,
                                  id=curr_search$ids[1:length(curr_search$ids)],
                                  db="all")
       print(link_search$links)

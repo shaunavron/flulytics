@@ -10,9 +10,9 @@
 #' @examples
 #' view_data_table("CA_Imm")
 
-library(readxl)
-
 view_data_table <- function(data_type) {
+  library(readxl)
+
   if (is.character(data_type)){
     #pass
   }else{

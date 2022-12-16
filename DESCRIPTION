@@ -1,21 +1,25 @@
 Package: Flulytics
 Type: Package
-Title: Analysis of influenza data worldwide
+Title: Analysis of influenza data nationwide
 Version: 0.1.0
 Authors@R: person("Shauna", "Vronces", 
                   email = "shauna.vronces@mail.utoronto.ca", 
                   role = c("aut", "cre"))
 Maintainer: Shauna Vronces <shauna.vronces@mail.utoronto.ca>
-Description: Flulytics is an R package that allows you to load data of reported 
-    cases of various flu strains across multiple demographics (sex, age, region,
-    time, etc.) and provides different functions for the visualization, 
-    modelling, and analysis of this data.
+Description: Flulytics is an R package that allows you to load and visualize 
+  data of reported influenza cases, and influenza immunizations in Canada. This 
+  package contains functions that allows you to view the raw data, generate 
+  customizable bar plots, and search ncbi databases for the id's of records for
+  each influenza strain in the data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     readxl,
     rentrez,
-    tibble, 
-    tidyverse
+    tidyverse,
+    tidyr,
+    reshape2, 
+    scales, 
+    shiny
 RoxygenNote: 7.2.2

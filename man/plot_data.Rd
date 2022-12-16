@@ -4,12 +4,18 @@
 \alias{plot_data}
 \title{Generates data plots}
 \usage{
-plot_data(type, week, year, region)
+plot_data(type, week = NULL, year = NULL, region = NULL)
 }
 \arguments{
 \item{type}{The type of data you would like to generate the plot for. Options
 are immunization data (imm) and influenza case data for Canada (CA_flu,
 CA_strains)}
+
+\item{week}{The week you would like to view data for}
+
+\item{year}{The year you would like to view data for}
+
+\item{region}{The region you would like to view data for}
 }
 \value{
 Generated plot
@@ -21,4 +27,5 @@ Confirmed Cases from January 2020 to December 2022.
 }
 \examples{
 plot_data("imm")
+plot_data("CA_strains", year="2022")
 }
