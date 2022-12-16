@@ -72,7 +72,7 @@ alt="InfCasesWeek" width="750" height="550"/>
 Figure: Example output from __*plot_data*__, showing confirmed influenza cases 
 by strain, and comparing the case counts for a given week in 2021 vs. 2022.
 
-<div style="text-align:center"><img src="inst/extdata/inf_activity_week.png" 
+<div style="text-align:center"><img src="inst/extdata/Inf_activity_week.png" 
 alt="InfActWeek" width="750" height="550"/>
 
 Figure: Example output from __*plot_data*__, showing influenza activity by 
