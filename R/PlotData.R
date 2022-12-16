@@ -27,7 +27,9 @@ plot_data <- function(type, week=NULL, year=NULL, region=NULL){
     stop("Type must not be blank. Options are imm, CA_flu, CA_strains.")
   }
   if(type == "imm"){
-    imm_data <- read_excel("inst/extdata/Canada_Imm_2020.xlsx")
+
+    fpath <- system.file("extdata", "Canada_Imm_2020.xlsx", package="Flulytics")
+    imm_data <- read_excel(fpath)
     imm_df <- as.data.frame(imm_data)
     if(missing(week) && missing(year) && missing(region)){
       imm_df.long <- melt(imm_df, id="Age Range (years)",
@@ -44,7 +46,8 @@ plot_data <- function(type, week=NULL, year=NULL, region=NULL){
            type")
     }
   }else if(type == "CA_flu"){
-    ca_data <- read_excel("inst/extdata/Canada_wk35_48.xlsx")
+    fpath <- system.file("extdata", "Canada_wk35_48.xlsx", package="Flulytics")
+    ca_data <- read_excel(fpath)
     ca_df <- as.data.frame(ca_data)
     if(missing(week) && missing(region)){
       stop("Must enter either a valid week or region name")
@@ -79,7 +82,8 @@ plot_data <- function(type, week=NULL, year=NULL, region=NULL){
       }
     }
   }else if(type == "CA_flu_strains"){
-    ca_strain_data <- read_excel("inst/extdata/CA_JAN2020_DEC2022.xlsx")
+    fpath <- system.file("extdata", "CA_JAN2020_DEC2022.xlsx", package="Flulytics")
+    ca_strain_data <- read_excel(fpath)
     ca_strain_df <- as.data.frame(ca_strain_data)
     ca_strain_df$AH1 <- as.numeric(ca_strain_df$AH1)
     ca_strain_df$AH1N12009 <- as.numeric(ca_strain_df$AH1N12009)
