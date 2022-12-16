@@ -1,2 +1,2 @@
 # flulytics
-Flulytics is an R package that allows you to load data of reported cases of various flu strains across multiple demographics (sex, age, region, time, etc.) and provides different functions for the visualization, modelling, and analysis of this data.
+Flulytics is an R package that allows you to load and visualize data of reported influenza cases, and influenza immunizations in Canada. This package contains functions that allows you to view the raw data, generate customizable bar plots, and search ncbi databases for the id's of records for each influenza strain in the data.
