@@ -21,17 +21,20 @@ view_data_table <- function(data_type) {
   }
 
   if(data_type == "CA_strains"){
-    CA_Flu_strains <- read_excel("inst/extdata/CA_JAN2020_DEC2022.xlsx")
+    fpath <- system.file("extdata", "CA_JAN2020_DEC2022.xlsx", package="Flulytics")
+    CA_Flu_strains <- read_excel(fpath)
     CA_strain_df <- as.data.frame(CA_Flu_strains)
     View(CA_Flu_strains)
     return(CA_strain_df)
   }else if(data_type == "CA_Flu"){
-    CA_Flu <- read_excel("inst/extdata/Canada_wk35_48.xlsx")
+    fpath <- system.file("extdata", "Canada_wk35_48.xlsx", package="Flulytics")
+    CA_Flu <- read_excel(fpath)
     CA_flu_df <- as.data.frame(CA_Flu)
     View(CA_Flu)
     return(CA_flu_df)
   }else if(data_type == "CA_Imm"){
-    CA_Imm <- read_excel("inst/extdata/Canada_Imm_2020.xlsx")
+    fpath <- system.file("extdata", "Canada_Imm_2020.xlsx", package="Flulytics")
+    CA_Imm <- read_excel(fpath)
     imm_df <- as.data.frame(CA_Imm)
     View(CA_Imm)
     return(imm_df)
