@@ -1,9 +1,12 @@
+#' @import readxl
+#'
 #' Gets Data Tables
 #'
 #' This function produces allows the user to view the data provided in this
 #' package
 #'
-#' @param data_type A character string of desired data to get table for
+#' @param data_type A character string of desired data to get table for. Possible
+#' options are CA_strains, CA_Flu, and CA_Imm.
 #' @return The data in a data frame, opens up separate window to view the
 #' original data files within the GUI
 #'
@@ -11,7 +14,6 @@
 #' view_data_table("CA_Imm")
 
 view_data_table <- function(data_type) {
-  library(readxl)
 
   if (is.character(data_type)){
     #pass

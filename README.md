@@ -140,17 +140,49 @@ citation("Flulytics")
 
 ## References for Package
 
-\*Public Health Agency of Canada. Influenza activity for Canada 2022
-(<https://ftp.maps.canada.ca/pub/phac_aspc/Influenza_Grippe/Influenza_Download_files/FGP_Influenza_activity_map.xlsx>)
+- Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J,
+  McPherson J, Dipert A, Borges B (2022). shiny: Web Application
+  Framework for R. R package version 1.7.
 
-- FluNet. Influenza data for Canada 2021-2022.
-  (<https://www.who.int/tools/flunet>)
+- FluNet <https://www.who.int/tools/flunet>
+
+- Public Health Agency of Canada
+  <https://ftp.maps.canada.ca/pub/phac_aspc/Influenza_Grippe/Influenza_Download_files/FGP_Influenza_activity_map.xlsx>
+
+- R Core Team (2022). R: A language and environment for statistical
+  computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL <https://www.R-project.org/>
+
+- “rentrez: an R package for the NCBI eUtils API.” The R Journal, 9,
+  520–526.
+
+- Silva, A. “Anjalisilva/TestingPackage: A Simple R Package Illustrating
+  Components of an R Package: 2019-2022 BCB410H - Applied
+  Bioinformatics, University of Toronto, Canada.” GitHub,
+  <https://github.com/anjalisilva/TestingPackage>
 
 - Statistics Canada. Table 13-10-0096-25 Influenza immunization in the
   past 12 months, by age group DOI:
   <https://doi.org/10.25318/1310009601-eng>
 
-- 
+- Wickham H. ggplot2: Elegant Graphics for Data Analysis.
+  Springer-Verlag New York, 2016.
+
+- Wickham H, Bryan J (2022). readxl: Read Excel Files.
+  <https://readxl.tidyverse.org>, <https://github.com/tidyverse/readxl>
+
+- Wickham H, Girlich M (2022). tidyr: Tidy Messy Data.
+  <https://tidyr.tidyverse.org>, <https://github.com/tidyverse/tidyr>
+
+- Wickham H, Seidel D (2022). scales: Scale Functions for Visualization.
+  R package version 1.2.1, <https://CRAN.R-project.org/package=scales>
+
+- Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R,
+  Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller
+  E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V,
+  Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to
+  the tidyverse.” Journal of Open Source Software, 4(43), 1686.
+  <doi:10.21105/joss.01686> <https://doi.org/10.21105/joss.01686>
 
 ## Maintainer
 

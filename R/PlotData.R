@@ -1,8 +1,22 @@
+#' @import readxl
+#' @import tidyr
+#' @import tidyverse
+#' @import reshape2
+#' @import scales
+#'
 #' Generates data plots
 #'
 #' This function generates plots for Canada Immunization rates in 2020,
 #' Influenza activity in Canada from August to December 2022, and Influenza
 #' Confirmed Cases from January 2020 to December 2022.
+#'
+#' Please note that only certain parameters are valid for certain data types.
+#'
+#' - For type CA_flu, you can plot data based on region or week.
+#' - For type CA_strains, you can plot data based on year or week.
+#'
+#' For both data types, you can view the corresponding data table to see the
+#' regions, weeks, or years available.
 #'
 #' @param type The type of data you would like to generate the plot for. Options
 #' are immunization data (imm) and influenza case data for Canada (CA_flu,
@@ -17,11 +31,6 @@
 #' plot_data("CA_strains", year="2022")
 
 plot_data <- function(type, week=NULL, year=NULL, region=NULL){
-  library(readxl)
-  library(tidyr)
-  library(tidyverse)
-  library(reshape2)
-  library(scales)
 
   if(missing(type)){
     stop("Type must not be blank. Options are imm, CA_flu, CA_strains.")

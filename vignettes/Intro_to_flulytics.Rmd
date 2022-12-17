@@ -1,0 +1,142 @@
+---
+title: "A tour of Flulytics"
+author: "Shauna Vronces"
+date: "`r format(Sys.time(), '%d %b %Y')`"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    number_sections: false
+vignette: >
+  %\VignetteIndexEntry{A tour of Flulytics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.align = "center", 
+               out.width = "90%",
+               fig.width = 6, fig.height = 5.5,
+               dev.args=list(pointsize=10),
+               par = TRUE, # needed for setting hook 
+               collapse = TRUE, # collapse input & ouput code in chunks
+               warning = FALSE)
+knit_hooks$set(par = function(before, options, envir)
+  { if(before && options$fig.show != "none") 
+       par(family = "sans", mar=c(4.1,4.1,1.1,1.1), mgp=c(3,1,0), tcl=-0.5)
+})
+set.seed(1) # for exact reproducibility
+```
+       
+## Introduction
+
+`Flulytics` is an R package that allows users to load and visualize data of reported influenza cases, and influenza immunizations in Canada. **This document gives a tour of Flulytics (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "Flulytics")` for further details. 
+
+To download **Flulytics**, use the following commands:
+
+``` r
+require("devtools")
+install_github("shaunamia/flulytics", build_vignettes = TRUE)
+library("Flulytics")
+```
+To list all sample functions available in the package:
+``` r
+ls("package:Flulytics")
+```
+<div style="text-align:left">
+
+<br>
+
+## Applications
+To get more information about *view_data_table* function, you can access the help documentation by:
+```{r, }
+library(Flulytics)
+?Flulytics::view_data_table
+``` 
+
+The function *view_data_table* allows users to view the raw data based on user-set
+parameters for the datasets that are provided in this package. The possible parameters for type are: 
+
+For this example, we will view the raw data for influenza immunizations in Canada for the year 2020:
+
+```{r, }
+exampleData <- Flulytics::view_data_table("CA_Imm")
+``` 
+
+This function will also open the data frame within your rstudio GUI. To access results in console, see:
+```{r, }
+# To view the resulting data table
+exampleData
+``` 
+
+To get more information about *plot_data* function, you can access the help documentation by:
+```{r, }
+library(Flulytics)
+?Flulytics::plot_data
+``` 
+
+The function *plot_data* allows users to plot data for the given datasets, and allows the users to customize how they want to visualize their data based on certain parameters.
+
+For this example, we will create two plots for data type CA_flu. You can see that based on user set parameters, the contents of the plots and the information they show are different:
+```{r, }
+# create plot1, based onregion Toronto
+plot1 <- Flulytics::plot_data("CA_flu", region = "Toronto")
+# create plot2, based on region Centre-du-Québec
+plot2 <- Flulytics::plot_data("CA_flu", region = "Centre-du-Québec")
+#Compare plots 1 and 2
+plot1
+plot2
+``` 
+
+To get more information on *ncbi_search* function, you can access the help documentation by:
+
+```{r, }
+library(Flulytics)
+?Flulytics::ncbi_search
+``` 
+
+The function *ncbi_search* allows users to perform a NCBI search by providing a term and database, and will be provided with the NCBI record ids for each found entry. There is also an option to show all results of a linked search, where the user will also be provided with the record ids of all linked entries from other databases.
+
+Let's do a search in the Assembly database for Influenza A. By deafult, this function also provides the record ids for all related entries in other databases provided by NCBI, but we will set it to FALSE to save space, as there will be a lot of linked ids for this particular search:
+
+```{r, }
+# perform NCBI search
+links <- Flulytics::ncbi_search("INF A", "assembly", related=FALSE)
+
+``` 
+
+
+## References
+
+- Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J, Dipert A, Borges B (2022). shiny: Web Application Framework for R. R package version 1.7.
+
+- FluNet https://www.who.int/tools/flunet
+
+- Public Health Agency of Canada
+https://ftp.maps.canada.ca/pub/phac_aspc/Influenza_Grippe/Influenza_Download_files/FGP_Influenza_activity_map.xlsx
+
+- R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/
+
+- "rentrez: an R package for the NCBI eUtils API.” The R Journal, 9, 520–526.
+
+- Silva, A. “Anjalisilva/TestingPackage: A Simple R Package Illustrating Components of an R Package: 2019-2022 BCB410H - Applied Bioinformatics, University of Toronto, Canada.” GitHub, https://github.com/anjalisilva/TestingPackage
+
+- Statistics Canada. Table 13-10-0096-25 Influenza immunization in the past 12 months, by age group
+DOI: https://doi.org/10.25318/1310009601-eng
+
+- Wickham H. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+- Wickham H, Bryan J (2022). readxl: Read Excel Files. https://readxl.tidyverse.org, https://github.com/tidyverse/readxl
+
+- Wickham H, Girlich M (2022). tidyr: Tidy Messy Data. https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr
+
+- Wickham H, Seidel D (2022). scales: Scale Functions for Visualization. R package version 1.2.1, https://CRAN.R-project.org/package=scales
+
+- Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686 https://doi.org/10.21105/joss.01686
+
+
+----
+
+```{r}
+sessionInfo()
+```

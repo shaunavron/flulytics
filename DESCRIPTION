@@ -14,7 +14,7 @@ Description: Flulytics is an R package that allows you to load and visualize
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
     readxl,
     rentrez,
     tidyverse,

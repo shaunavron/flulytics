@@ -1,3 +1,5 @@
+#'
+#'
 #' NCBI Search
 #'
 #' This function allows you to input a search term and returns the databases and

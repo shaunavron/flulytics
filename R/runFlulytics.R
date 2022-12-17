@@ -11,7 +11,8 @@
 #' runFlulytics()
 
 runFlulytics <- function() {
+  fpath <- system.file("shiny-scripts", "app.R", package="Flulytics")
 
-  shiny::runApp("inst/shiny-scripts/app.R", display.mode = "normal")
+  shiny::runApp(fpath, display.mode = "normal")
   return()
 }
