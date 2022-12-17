@@ -1,5 +1,3 @@
-#' @import readxl
-#'
 #' Gets Data Tables
 #'
 #' This function produces allows the user to view the data provided in this
@@ -14,6 +12,8 @@
 #' view_data_table("CA_Imm")
 
 view_data_table <- function(data_type) {
+  
+  library(readxl)
 
   if (is.character(data_type)){
     #pass
