@@ -1,9 +1,3 @@
-#' @import readxl
-#' @import tidyr
-#' @import tidyverse
-#' @import reshape2
-#' @import scales
-#'
 #' Generates data plots
 #'
 #' This function generates plots for Canada Immunization rates in 2020,
@@ -31,6 +25,10 @@
 #' plot_data("CA_strains", year="2022")
 
 plot_data <- function(type, week=NULL, year=NULL, region=NULL){
+  library(readxl)
+  library(tidyverse)
+  library(reshape2)
+  library(scales)
 
   if(missing(type)){
     stop("Type must not be blank. Options are imm, CA_flu, CA_strains.")
