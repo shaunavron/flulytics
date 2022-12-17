@@ -14,7 +14,7 @@
 #'
 #' @param type The type of data you would like to generate the plot for. Options
 #' are immunization data (imm) and influenza case data for Canada (CA_flu,
-#' CA_strains)
+#' CA_flu_strains)
 #' @param week The week you would like to view data for
 #' @param year The year you would like to view data for
 #' @param region The region you would like to view data for
@@ -22,7 +22,7 @@
 #' @export
 #' @examples
 #' plot_data("imm")
-#' plot_data("CA_strains", year="2022")
+#' plot_data("CA_flu_strains", year="2022")
 
 plot_data <- function(type, week=NULL, year=NULL, region=NULL){
   library(readxl)
